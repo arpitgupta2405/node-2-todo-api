@@ -31,18 +31,18 @@ MongoClient.connect(url, (err, client) => {
   //   console.log(JSON.stringify(result.ops, undefined, 2));
   // });
 
-  // db.collection('Users').insertOne({
-  //   name: 'Arpit Gupta',
-  //   age: 25,
-  //   location: 'Bangalore'
-  // }, (err, result) => {
-  //   if(err) {
-  //     return console.log('Unable to insert users', err);
-  //   }
-  //
-  //   // console.log(JSON.stringify(result.ops, undefined, 2));
-  //   console.log(result.ops[0]._id.getTimestamp());
-  // });
+  db.collection('Users').insertOne({
+    name: 'Arpit Gupta',
+    age: 25,
+    location: 'Bangalore'
+  }, (err, result) => {
+    if(err) {
+      return console.log('Unable to insert users', err);
+    }
+
+    // console.log(JSON.stringify(result.ops, undefined, 2));
+    console.log(result.ops[0]._id.getTimestamp());
+  });
 
 
 
