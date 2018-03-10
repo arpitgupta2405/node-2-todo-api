@@ -9,8 +9,8 @@ let db = {
 mongoose.Promise = global.Promise;
 // mongoose.connect(mongodb_uri || url);
 // mongoose.connect('mongodb://localhost:27017/TodoApp1' || 'mongodb://arpitgupta2405:Gmail123@ds261138.mlab.com:61138/todo-app-api')
-
-mongoose.connect(process.env.PORT ?  db.uri : db.localhost );
+//process.env.MONGODB_URI = (process.env.PORT ?  db.uri : db.localhost);
+mongoose.connect(process.env.MONGODB_URI);
 
 module.exports = {
   mongoose
