@@ -117,12 +117,12 @@ describe('GET /todos/:id', () => {
 describe('DELETE /todos/:id', () => {
 
   it('should remove a todo', (done) => {
-
+    var hexID = todos[0]._id.toHexString();
     request(app)
-      .delete(`/todos/${todos[0]._id.toHexString()}`)
+      .delete(`/todos/${hexID}`)
       .expect(200)
       .expect((res) => {
-        expect(res.body.todo.text).toBe(todos[0].text);
+        expect(res.body.todo._id).toBe(hexID);
       })
       .end(done)
   });
